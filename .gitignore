@@ -1,0 +1,9 @@
+/vendor/
+node_modules/
+.env
+*.log
+*.sqlite
+*.zip
+*.tar.gz
+.DS_Store
+Thumbs.db
