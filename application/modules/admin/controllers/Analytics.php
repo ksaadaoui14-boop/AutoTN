@@ -37,23 +37,4 @@ class Analytics extends CI_Controller {
         header('Content-Type: application/json; charset=utf-8');
         echo json_encode($resp);
     }
-    public function chatbot_api()
-{
-    $this->load->database();
-    $question = strtolower($this->input->post('question'));
-
-    if(strpos($question, 'عدد السيارات') !== false) {
-        $count = $this->db->count_all('posts'); 
-        echo "عندك حالياً $count سيارة في النظام.";
-    }
-    elseif(strpos($question, 'medenine') !== false) {
-        $this->db->where('state', 'Medenine');
-        $count = $this->db->count_all_results('posts');
-        echo "عدد السيارات في Medenine هو: $count.";
-    }
-    else {
-        echo "ملا حكاية 🙂 ما فهمتش سؤالك. جرّب تقول: 'عدد السيارات' أو 'السيارات في Medenine'";
-    }
-}
-
 }
